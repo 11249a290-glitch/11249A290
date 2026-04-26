@@ -1,8 +1,12 @@
 #include <stdio.h>
 // Number of vertices in our graph 
 #define V 5 
+ /* A simple greedy approach to find a Vertex Cover. 
+  * It follows a 2-approximation strategy. 
+  */
 void findVertexCover(int graph[V][V]) 
 { 
+    // Array to represent our Cover Set 'C' 
     int visited[V]; 
 
     for (int i = 0; i < V; i++) 
@@ -10,7 +14,8 @@ void findVertexCover(int graph[V][V])
 //Initialize a set C to be empty (this will hold our vertex cover). 
         visited[i] = 0; 
     } 
-
+  // Repeat until no unmarked edges remain in C (visited array) 
+ // We use nested loops to scan every possible edge (u, v) in the matrix. 
     for (int u = 0; u < V; u++) 
     { 
         for (int v = 0; v < V; v++) 
@@ -19,6 +24,12 @@ void findVertexCover(int graph[V][V])
             { 
                 visited[u] = 1; 
                 visited[v] = 1; 
+                 /* Removing of all edges incident on those two vertices 
+                    We don't need to code to delete the edges.  
+                    By marking 'u' and 'v' as visited,  
+                    our 'if' condition above will automatically skip all other edges 
+                    connected to them! 
+                 */ 
             } 
         } 
     } 
