@@ -2,17 +2,21 @@
 //firstfit
 void firstfit(int items[],int n,int c)
 {
+ // Available capacity of bins
 int bin[n];
 //Set binCount = 0 (no bins used ini ally)
 int bincount=0;
+ // Initialize all bins with full capacity
 for(int i=0;i<n;i++)
 bin[i]=c;
+ // Process each item
 for(int i=0;i<n;i++)
  {
     int placed=0;
-    {
+    // Check existing bins
     for(int j=0;j<bincount;j++)
      {
+      // items fits in the current bin 
         if(bin[j]>=items[i])
          {
             bin[j]-=items[i];
@@ -21,6 +25,7 @@ for(int i=0;i<n;i++)
             break;
          }
      }
+  // Create new bin if item is not fitted in any existing bin
     if (!placed)
     {
         bin[bincount]-=items[i];
