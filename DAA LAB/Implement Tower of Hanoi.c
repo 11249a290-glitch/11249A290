@@ -16,8 +16,10 @@ toh(disk_count-1,T,D,S);
 int main()
 {
 int n; 
+  //no.of disks
 printf("enter number of disks: ");
 scanf("%d", &n);
+  //function call
 toh(n,'S','D','T');
 return 0;
 }
