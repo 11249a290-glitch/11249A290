@@ -50,6 +50,7 @@ void dijkstra(int graph[V][V])
 } 
 int main() 
 { 
+    //cost in form of matrix
     int graph[V][V] = { 
         {0, 10, 0, 30, 100}, 
         {10, 0, 50, 0, 0}, 
