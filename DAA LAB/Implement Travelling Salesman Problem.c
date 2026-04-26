@@ -10,13 +10,13 @@ int d[MAXN][MAXN];
 // Bitwise AND checks whether that city's bit is set in S.
 // S will have 2^n possible combinatios of cities, so the size of it should be 2^MAXN that 1<< MAXN
 int dp[MAXN][1 << MAXN];
-// g(i,S)
 // Returns the minimum cost of visiting all cities in set S starting from city i
 int g(int i, int S)
 {
     // Base case: If S is empty, return the cost to return to the starting city (A)
     if (S == 0)
-        return d[i][0]; //g(i,{}) = d[i][0] - Cost to return to starting city A from city i
+        return d[i][0]; 
+    //g(i,{}) = d[i][0] - Cost to return to starting city A from city i
     //If the g(i,S) has already been computed, return the stored value
     if (dp[i][S] != -1) 
         return dp[i][S];
@@ -44,8 +44,10 @@ int g(int i, int S)
 }
 int main()
 {
+    //no.of cities
     printf("Enter number of cities: ");
     scanf("%d", &n);
+    //cost matrix
     printf("Enter cost matrix:\n");
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
@@ -69,6 +71,7 @@ int main()
             printf(" %d ", d[i][j]);
         printf("|\n");
     }
+    //minimum cost
     printf("Minimum travelling cost: %d\n", result);
     return 0;
 }
