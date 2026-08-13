@@ -1,7 +1,7 @@
 class Student {
     String name;
     int rollnum;
-    double marks;
+    double marks; 
     public Student(String name, int rollnum, double marks) {
         this.name = name;
         this.rollnum = rollnum;
